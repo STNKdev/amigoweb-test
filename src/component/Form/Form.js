@@ -90,12 +90,12 @@ export const Form = () => {
   };
 
   return (
-      <form className='reg-form' action='#' onSubmit={handleSubmitForm}>
+      <form id='signup' className='reg-form' action='#' onSubmit={handleSubmitForm}>
         <header className='header-form'>
           <h2 className='header-form_title'>Регистрация</h2>
           <p className='header-form_description'>
             Уже есть аккаунт?
-            <a href="#" className='link'>Войти</a>
+            <a href='#signup' className='link'>Войти</a>
           </p>
         </header>
 
@@ -111,14 +111,14 @@ export const Form = () => {
                error={error.email || ''}
                onChange={handleChangeEmail}
                value={email}
-               type='email'
+               type='text'
         />
         <Input label='Номер телефона'
                placeholder='Введите номер телефона'
                error={error.phone || ''}
                onChange={handleChangePhone}
                value={phone}
-               type='tel'
+               type='text'
         />
 
         <Dropdown name='Язык'
@@ -130,7 +130,7 @@ export const Form = () => {
           <Checkbox active={activeCheckbox} onClick={toogleCheckbox}/>
           <span>
             Принимаю
-            <a href="#" className='link'> условия </a>
+            <a href="#signup" className='link'> условия </a>
             использования
           </span>
         </label>
