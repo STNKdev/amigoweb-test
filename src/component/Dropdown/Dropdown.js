@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './style.css';
 import chevronBottom from './Chevron_Bottom.svg';
 
-export const Dropdown = ({ name, items }) => {
+export const Dropdown = ({ name, items, onChange }) => {
   const [visiblePopup, setVisiblePopup] = useState(false);
   const [activeItem, setActiveItem] = useState(0);
   const [firstClick, setFirstClick] = useState(true);
@@ -10,6 +10,7 @@ export const Dropdown = ({ name, items }) => {
   const activeLabel = items[activeItem];
 
   const onSelectItem = (index) => {
+    onChange(index);
     setActiveItem(index);
     setFirstClick(false);
     setVisiblePopup(false);

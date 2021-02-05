@@ -4,6 +4,8 @@
   min-width: 360px;
   position: relative;
   display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .dropdown-menu {

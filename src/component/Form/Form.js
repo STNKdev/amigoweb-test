@@ -14,6 +14,8 @@ export const Form = () => {
   const [phone, setPhone] = useState('');
   const [language, setLanguage] = useState('');
 
+  const languageList = ['Русский', 'Английский', 'Китайский', 'Испанский'];
+
 
   const toogleButton = () => {
     setActiveButton(!activeButton);
@@ -29,7 +31,15 @@ export const Form = () => {
 
   const handleChangeEmail = (event) => {
     setEmail(event.target.email);
-  }
+  };
+
+  const handleChangePhone = (event) => {
+    setPhone(event.target.value);
+  };
+
+  const handleChangeLanguage = (item) => {
+    setLanguage(languageList[item]);
+  };
 
   const handleSubmitForm = (event) => {
     event.preventDefault();
@@ -47,13 +57,13 @@ export const Form = () => {
         </header>
         <Input label='Имя' placeholder='Введите Ваше Имя' error='' onChange={handleChangeName} value={name}/>
         <Input label='Email' placeholder='Введите ваш email' error='' onChange={handleChangeEmail} value={email}/>
-        <Input label='Номер телефона' placeholder='Введите номер телефона' error='' onChange={handleChangeName} value={name}/>
-        <Dropdown name='Язык' items={['Русский', 'Английский', 'Китайский', 'Испанский']} />
-        <label>
+        <Input label='Номер телефона' placeholder='Введите номер телефона' error='' onChange={handleChangePhone} value={phone}/>
+        <Dropdown name='Язык' items={languageList} onChange={handleChangeLanguage} />
+        <label className='conditions'>
           <Checkbox active={activeCheckbox} onClick={toogleCheckbox}/>
           <span>
             Принимаю
-            <a href="#" className='link'>условия</a>
+            <a href="#" className='link'> условия </a>
             использования
           </span>
         </label>

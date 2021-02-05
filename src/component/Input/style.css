@@ -2,6 +2,9 @@
 .label-input {
   width: 100%;
   min-width: 360px;
+  display: inline-block;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .input-title {
@@ -16,7 +19,7 @@
   width: 100%;
   padding: 16px 16px 15px 16px;
   outline: none;
-  color: #7C9CBF;
+  color: #2C2738;
   font-size: 16px;
   line-height: 21px;
   margin-top: 8px;
@@ -27,8 +30,15 @@
 }
 
 .input:focus {
-  color: #2C2738;
   border: 2px solid #0880AE;
+}
+
+.input::-webkit-input-placeholder {
+  color: #7C9CBF;
+}
+
+.input::-moz-placeholder {
+  color: #7C9CBF;
 }
 
 .input-error {
