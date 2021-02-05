@@ -54,7 +54,7 @@ export const Form = () => {
   };
 
   useEffect(() => {
-    const regexp = /^((8|\+7)[- ]?)?(\(?\d{3}\)?[- ]?)?[\d\- ]{7,10}$/;
+    const regexp = /^((8|\+7)[- ]?)?(\(?\d{3}\)?[- ]?)[\d\- ]{7,10}$/;
     if (regexp.test(phone)) {
       setError({...error, phone: ''});
     } else {
