@@ -81,7 +81,12 @@ export const Form = () => {
 
   const handleSubmitForm = (event) => {
     event.preventDefault();
-    console.log('Done');
+    console.log('Done: ', {
+      name,
+      email,
+      phone,
+      language
+    });
   };
 
   return (
@@ -93,10 +98,34 @@ export const Form = () => {
             <a href="#" className='link'>Войти</a>
           </p>
         </header>
-        <Input label='Имя' placeholder='Введите Ваше Имя' error={error.name || ''} onChange={handleChangeName} value={name}/>
-        <Input label='Email' placeholder='Введите ваш email' error={error.email || ''} onChange={handleChangeEmail} value={email}/>
-        <Input label='Номер телефона' placeholder='Введите номер телефона' error={error.phone || ''} onChange={handleChangePhone} value={phone}/>
-        <Dropdown name='Язык' items={languageList} onChange={handleChangeLanguage} />
+
+        <Input label='Имя'
+               placeholder='Введите Ваше Имя'
+               error={error.name || ''}
+               onChange={handleChangeName}
+               value={name}
+               type='text'
+        />
+        <Input label='Email'
+               placeholder='Введите ваш email'
+               error={error.email || ''}
+               onChange={handleChangeEmail}
+               value={email}
+               type='email'
+        />
+        <Input label='Номер телефона'
+               placeholder='Введите номер телефона'
+               error={error.phone || ''}
+               onChange={handleChangePhone}
+               value={phone}
+               type='tel'
+        />
+
+        <Dropdown name='Язык'
+                  items={languageList}
+                  onChange={handleChangeLanguage}
+        />
+
         <label className='conditions'>
           <Checkbox active={activeCheckbox} onClick={toogleCheckbox}/>
           <span>
@@ -105,7 +134,11 @@ export const Form = () => {
             использования
           </span>
         </label>
-        <Button text='Зарегистрироваться' disable={disableButton} type='submit' />
+
+        <Button text='Зарегистрироваться'
+                disable={disableButton}
+                type='submit'
+        />
       </form>
   );
 };
