@@ -1,0 +1,38 @@
+
+.label-input {
+  width: 100%;
+  min-width: 360px;
+}
+
+.input-title {
+  color: #756F86;
+  font-size: 16px;
+  line-height: 21px;
+}
+
+.input {
+  display: block;
+  height: 52px;
+  width: 100%;
+  padding: 16px 16px 15px 16px;
+  outline: none;
+  color: #7C9CBF;
+  font-size: 16px;
+  line-height: 21px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  border: 1px solid #DBE2EA;
+  box-shadow: 0 4px 8px rgba(44, 39, 56, 0.04);
+}
+
+.input:focus {
+  color: #2C2738;
+  border: 2px solid #0880AE;
+}
+
+.input-error {
+  color: #FF7171;
+  font-size: 14px;
+  line-height: 18px;
+}

@@ -1,0 +1,29 @@
+.btn {
+  display: block;
+  min-width: 180px;
+  width: 100%;
+  height: 56px;
+  color: #EBF4F8;
+  font-size: 16px;
+  line-height: 21px;
+  text-align: center;
+  background-color: #0880AE;
+  outline: none;
+  border: none;
+  border-radius: 6px;
+  transition: box-shadow 500ms ease-out;
+  box-shadow: 0 2px 4px rgba(44, 39, 56, 0.08), 0 4px 8px rgba(44, 39, 56, 0.08);
+}
+
+.btn-disable {
+  color: #2C2738;
+  background-color: #DBE2EA;
+}
+
+.btn:not(.btn-disable):hover {
+  box-shadow: 0 12px 24px rgba(44, 39, 56, 0.08), 0 24px 48px rgba(44, 39, 56, 0.16);
+}
+
+.btn:not(.btn-disable):active {
+  border: 2px solid rgba(44, 39, 56, 0.86);
+}
