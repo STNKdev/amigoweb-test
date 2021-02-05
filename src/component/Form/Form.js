@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import './style.css';
 import Input from '../Input';
 import Button from '../Button';
@@ -29,7 +29,7 @@ export const Form = () => {
     const regexp = /^[a-zA-Zа-яА-Я -]+$/i;
     if (regexp.test(name)) {
       setError({...error, name: ''});
-    } else {
+    } else if(name.length !== 0) {
       setError({...error, name: 'Введено не корректное значение'});
     }
     console.log('Name', error);
@@ -43,7 +43,7 @@ export const Form = () => {
     const regexp = /^([A-Za-z0-9_\-.])+@([A-Za-z0-9_\-.])+\.([A-Za-z]{2,4})$/i;
     if (regexp.test(email)) {
       setError({...error, email: ''});
-    } else {
+    } else if (email.length !== 0) {
       setError({...error, email: 'Введено не корректное значение'});
     }
     console.log('Email', error);
@@ -57,7 +57,7 @@ export const Form = () => {
     const regexp = /^((8|\+7)[- ]?)?(\(?\d{3}\)?[- ]?)[\d\- ]{7,10}$/;
     if (regexp.test(phone)) {
       setError({...error, phone: ''});
-    } else {
+    } else if (phone.length !== 0) {
       setError({...error, phone: 'Введено не корректное значение'});
     }
     console.log('Phone', error);
