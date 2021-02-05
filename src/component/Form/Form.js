@@ -7,7 +7,7 @@ import Checkbox from '../Chechbox';
 
 
 export const Form = () => {
-  const [activeButton, setActiveButton] = useState(true);
+  const [disableButton, setDisableButton] = useState(false);
   const [activeCheckbox, setActiveCheckbox] = useState(false);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -16,10 +16,6 @@ export const Form = () => {
   const [error, setError] = useState({});
 
   const languageList = ['Русский', 'Английский', 'Китайский', 'Испанский'];
-
-  const toogleButton = () => {
-    setActiveButton(!activeButton);
-  };
 
   const toogleCheckbox = () => {
     setActiveCheckbox(!activeCheckbox);
@@ -71,6 +67,18 @@ export const Form = () => {
     setLanguage(languageList[item]);
   };
 
+  useEffect(() => {
+    if (error.name === '' &&
+        error.phone === '' &&
+        error.email === '' &&
+        language !== '' &&
+        activeCheckbox) {
+      setDisableButton(false);
+    } else {
+      setDisableButton(true);
+    }
+  }, [error, language, activeCheckbox]);
+
   const handleSubmitForm = (event) => {
     event.preventDefault();
     console.log('Done');
@@ -97,7 +105,7 @@ export const Form = () => {
             использования
           </span>
         </label>
-        <Button text='Зарегистрироваться' disable={activeButton} type='submit' />
+        <Button text='Зарегистрироваться' disable={disableButton} type='submit' />
       </form>
   );
 };
